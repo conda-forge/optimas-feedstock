@@ -9,7 +9,7 @@ source:
   sha256: 875ffe6e791f167b96edda1636c5ab10e3a863e961ca8f4a41d1e5c5aa559112
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -23,9 +23,17 @@ requirements:
     - jinja2
     - libensemble
     - mpi4py
+    - pandas
     - python >=3.9
 
 test:
+  requires:
+    - matplotlib
+    - python
+    - pytest
+  source_files:
+    - examples/
+    - tests/
   imports:
     - optimas
 
