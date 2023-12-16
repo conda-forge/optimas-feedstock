@@ -29,6 +29,7 @@ requirements:
 test:
   requires:
     - matplotlib
+    - numpy
     - python
     - pytest
   source_files:
