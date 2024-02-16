@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.4.0" %}
 
 package:
   name: optimas
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/optimas-org/optimas/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 875ffe6e791f167b96edda1636c5ab10e3a863e961ca8f4a41d1e5c5aa559112
+  sha256: fcee8afc7e642866542e91e13ae80592830f8d39f7ae75ded50ad4b2aede68a1
 
 build:
   number: 0
