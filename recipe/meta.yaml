@@ -1,4 +1,4 @@
-{% set version = "0.6.0" %}
+{% set version = "0.7.1" %}
 
 package:
   name: optimas
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/optimas-org/optimas/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 5995f2a2851aa98551b23f95f89d2bfc1f934fe2baee651f976a7f8a4045ccac
+  sha256: e446b0af5efdb5e716f752e14e26866f95a8e2a8a5edbf526d70cc13138dd4a0
 
 build:
   number: 0
@@ -19,11 +19,13 @@ requirements:
     - python >=3.9
     - setuptools
   run:
-    - ax-platform
+    - ax-platform == 0.4.0
     - jinja2
     - libensemble
     - mpi4py
     - python >=3.9
+    - numpy < 2  # ax-platform 0.4.0 requires numpy < 2
+    - matplotlib-base
 
 test:
   imports:
