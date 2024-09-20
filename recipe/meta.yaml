@@ -19,12 +19,12 @@ requirements:
     - python >=3.9
     - setuptools
   run:
-    - ax-platform == 0.4.0
+    - ax-platform ==0.4.0
     - jinja2
     - libensemble
     - mpi4py
     - python >=3.9
-    - numpy < 2  # ax-platform 0.4.0 requires numpy < 2
+    - numpy <2  # ax-platform 0.4.0 requires numpy < 2
     - matplotlib-base
 
 test:
