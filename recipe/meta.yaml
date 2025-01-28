@@ -9,26 +9,28 @@ source:
   sha256: e446b0af5efdb5e716f752e14e26866f95a8e2a8a5edbf526d70cc13138dd4a0
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools
   run:
     - ax-platform =0.4.0
     - jinja2
     - libensemble
     - mpi4py
-    - python >=3.9
+    - python >={{ python_min }}
     # ax-platform 0.4.0 requires numpy < 2
     - numpy <2
     - matplotlib-base
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - optimas
 
