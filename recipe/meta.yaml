@@ -9,21 +9,21 @@ source:
   sha256: bb57dfbfc17db6da938d9c42c8ac229db093c27e1562d9a1851ddf5350df5d0e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python >=3.10
     - setuptools
   run:
     - ax-platform =0.5.0
     - jinja2
     - libensemble
     - mpi4py
-    - python >=3.9
+    - python >=3.10
     - numpy
     - matplotlib-base
 
