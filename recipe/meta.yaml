@@ -16,16 +16,15 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python >=3.10
     - setuptools
   run:
-    - ax-platform =0.4.0
+    - ax-platform =0.5.0
     - jinja2
     - libensemble
     - mpi4py
-    - python >=3.9
-    # ax-platform 0.4.0 requires numpy < 2
-    - numpy <2
+    - python >=3.10
+    - numpy
     - matplotlib-base
 
 test:
@@ -61,3 +60,4 @@ extra:
     - AngelFP
     - ax3l
     - RemiLehe
+    - shuds13
