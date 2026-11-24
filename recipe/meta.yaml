@@ -33,8 +33,13 @@ requirements:
 test:
   files:
     - run_test.py
+  source_files:
+    - examples/
+    - tests/
   requires:
     - pip
+    - pytest
+    - pytest-mpi
     - python {{ python_min }}
   imports:
     - optimas
