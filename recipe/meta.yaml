@@ -39,6 +39,7 @@ test:
   requires:
     - pip
     - pytest
+    - pytest-mpi
     - python {{ python_min }}
   imports:
     - optimas

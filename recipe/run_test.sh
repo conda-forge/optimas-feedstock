@@ -6,4 +6,6 @@ set -eu -x -o pipefail
 # $PYTHON examples/dummy/run_example.py
 
 # Python: pytest
-$PYTHON -m pytest -s -vvvv tests/
+#   test_xopt_generators.py imports xopt at module level, which is not a
+#   dependency of optimas, so skip that file.
+$PYTHON -m pytest -s -vvvv tests/ --ignore=tests/test_xopt_generators.py
