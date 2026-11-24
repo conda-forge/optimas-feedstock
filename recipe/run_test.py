@@ -61,4 +61,15 @@ trials = gen.suggest(3)
 assert len(trials) == 3, trials
 assert set(trials[0]) == {"x0", "x1"}, trials[0]
 
+# Exercise an Ax generator as well, since optimas tracks the Ax API closely
+# and Ax API changes are the most likely source of breakage. Requesting fewer
+# points than ``n_init`` stays in the Sobol initialization step, so no model is
+# fit, but the Ax client, experiment and generation strategy are all created.
+ax_gen = AxSingleFidelityGenerator(vocs=vocs, n_init=4, save_model=False)
+ax_trials = ax_gen.suggest(2)
+assert len(ax_trials) == 2, ax_trials
+for trial in ax_trials:
+    assert {"x0", "x1"} <= set(trial), trial
+    assert all(-5.0 <= trial[name] <= 5.0 for name in ("x0", "x1")), trial
+
 print("optimas smoke test passed")
